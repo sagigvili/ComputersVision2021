@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QWidget, QApplication, QHBoxLayout, QVBoxLayout, QLa
 from PyQt5.QtGui import QPixmap, QImage
 import cv2
 import numpy as np
+import skimage.exposure as exposure
 
 
 class Hough(QWidget):
@@ -28,30 +29,49 @@ class Hough(QWidget):
     def find_triangles_using_hough(self):
         if self.image_box.pixmap():
             ## canny edge detection
-            imgCanny = cv2.Canny(self.im[1], 200, 300)
-            '''
-            lines = cv2.HoughLines(imgCanny, 1, np.pi / 360, 200)
-            for line in lines:
-                rho, theta = line[0]
-                a = np.cos(theta)
-                b = np.sin(theta)
-                x0 = a*rho
-                y0 = b*rho
-                x1 = int(x0 + 1000 * (-b))
-                y1 = int(y0 + 1000 * (a))
-                x2 = int(x0 - 1000 * (-b))
-                y2 = int(y0 - 1000 * (a))
-                cv2.line(self.im[1], (x1,y1), (x2,y2), (255,0,0), 2)
-            ##cv2.filter
-            #imgEdegeGradient = cv2.Laplacian(imgCanny, cv2.CV_8U)
-            cv2.imshow("Laplacian Image", self.im[1])
-            '''
-            cv2.imshow("Canny Image", imgCanny)
-            cv2.waitKey(0)
-            '''
-            image = QImage(imgCanny.data, imgCanny.shape[1], imgCanny.shape[0], QImage.Format_RGB888).rgbSwapped()
-            self.image_box.setPixmap(QPixmap.fromImage(image))'''
 
+            low_threshold = 350
+            high_threshold = 450
+            imgCanny = cv2.Canny(self.im[1], low_threshold, high_threshold)
+
+            sobelx = cv2.Sobel(imgCanny, cv2.CV_64F, 1, 0, ksize=3)
+            sobely = cv2.Sobel(imgCanny, cv2.CV_64F, 0, 1, ksize=3)
+
+            rho = 1  # distance resolution in pixels of the Hough grid
+            theta = np.pi / 180  # angular resolution in radians of the Hough grid
+            threshold = 15  # minimum number of votes (intersections in Hough grid cell)
+            min_line_length = 60  # minimum number of pixels making up a line
+            max_line_gap = 80  # maximum gap in pixels between connectable line segments
+            line_image = np.copy(self.im[1]) * 0  # creating a blank to draw lines on
+
+            # Run Hough on edge detected image
+            # Output "lines" is an array containing endpoints of detected line segments
+            lines = cv2.HoughLinesP(imgCanny, rho, theta, threshold, np.array([]),
+                                    min_line_length, max_line_gap)
+
+            for line in lines:
+                for x1, y1, x2, y2 in line:
+                    cv2.line(line_image, (x1, y1), (x2, y2), (255, 0, 0), 1)
+
+            # Draw the lines on the  image
+            lines_edges = cv2.addWeighted(self.im[1], 0.8, line_image, 1, 0)
+
+            # # apply sobel x derivative
+            # # normalize to range 0 to 255
+            sobelx_norm8 = exposure.rescale_intensity(sobelx, in_range='image', out_range=(0, 255)).astype(np.uint8)
+            # sobely_norm8 = exposure.rescale_intensity(sobely, in_range='image', out_range=(0, 255)).astype(np.uint8)
+
+            gray = cv2.cvtColor(line_image, cv2.COLOR_BGR2GRAY)
+            gray = np.float32(gray)
+            dst = cv2.cornerHarris(gray, 9, 5, 0.04)
+
+            line_image[dst > 0.01 * dst.max()] = [0, 0, 255]
+
+            height, width = line_image.shape[:2]
+            edges2 = QImage(line_image, width, height, QImage.Format_Grayscale8)
+            pixmap = QPixmap.fromImage(edges2)
+            self.image_box.setPixmap(pixmap)
+            cv2.imshow("bla", line_image)
         else:
             QMessageBox.critical(self, "Error", "Please upload image first")
 
