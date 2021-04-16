@@ -18,32 +18,37 @@ kp2, desc2 = sift.detectAndCompute(img2, None)
 rows = len(desc1)
 cols = len(desc2)
 distanceOfDescriptors = np.zeros((rows, cols))
+
 # i = 0
 # j = 0
 # for descriptor1 in desc1:
 #     for descriptor2 in desc2:
-#         temp = (descriptor1 - descriptor2) * (descriptor1 - descriptor2)
-#         temp1 = np.sum(temp)
-#         temp1 = np.sqrt(temp1)
+#         temp = abs(descriptor1 - descriptor2)
+#         # temp1 = np.sum(temp)
+#         # temp1 = np.sqrt(temp1)
 #         # temp1 = cv2.norm((descriptor1, descriptor2), cv2.NORM_L2)
-#         distanceOfDescriptors[i][j] = temp1
+#         distanceOfDescriptors[i][j] = np.sum(temp)
 #         j += 1
 #     j = 0
 #     i += 1
+
 
 for i in range(rows):
     for j in range(cols):
         temp = (desc1[i] - desc2[j]) * (desc1[i] - desc2[j])
         temp = np.sum(temp)
-        distanceOfDescriptors[i][j] = np.sum(temp)
+        distanceOfDescriptors[i][j] = np.sqrt(temp)
 
 ''' Matching the key points  based over the distances matrix '''
 bestMatch = 10000000000000000000
 secondBestMatch = 10000000000000000000
 matches = []
 tempIndex = None
+tempBiDirectionalIndex = None
 indexes = []
 count = 0
+oneDirection = []
+oppDirection = []
 for i in range(rows):
     # if count > 13:
     #     break
@@ -52,26 +57,35 @@ for i in range(rows):
             bestMatch = distanceOfDescriptors[i][j]
             tempIndex = j
             print(" temp index is: " + str(tempIndex))
-    for k in range(cols):
-        if k == tempIndex:
-            continue
-        elif distanceOfDescriptors[i][j] < secondBestMatch:
-            secondBestMatch = distanceOfDescriptors[i][j]
+    temp = (i , tempIndex)
+    oneDirection.append(temp)
+    # for k in range(rows):
+    #     if distanceOfDescriptors[k][tempIndex] < secondBestMatch:
+    #         secondBestMatch = distanceOfDescriptors[k][tempIndex]
+    #         tempBiDirectionalIndex = k
+    # if i == k:
+    #     indexes.append(tempIndex)
+    #     temp2 = (kp1[i], kp2[tempIndex])
+    #     matches.append(temp2)
+    #     print("a match has been found: i = " + str(i) + " k = " + str(k) + " j = " + str(tempIndex))
+bestMatch = 10000000000000000000
+for j in range (cols):
+    for i in range(rows):
+        if distanceOfDescriptors[i][j] < bestMatch:
+            bestMatch = distanceOfDescriptors[i][j]
+            tempIndex = i
+            print(" temp index is: " + str(tempIndex))
+    temp = (tempIndex, j)
+    oppDirection.append(temp)
 
-    if bestMatch < 0.8 * secondBestMatch:
-        check = 0
-        for ind in indexes: #make sure that tere is only one mtaching to a point
-            if (ind == tempIndex):
-                check = 1
-        if check == 1:
-            continue
-        else:
-            indexes.append(tempIndex)
-            temp2 = (kp1[i], kp2[tempIndex])
-            matches.append(temp2)
+for direct1 in oneDirection:
+    for oppDirect1 in oppDirection:
+        if (direct1[0] == oppDirect1[0]) and (direct1[1] == oppDirect1[1]):
+            temp1 = (kp1[direct1[0]], kp2[direct1[1]])
+            matches.append(temp1)
 
-    else:
-        continue
+
+
 
 shapeImg1 = np.shape(img1)
 newRowOffset = shapeImg1[0]

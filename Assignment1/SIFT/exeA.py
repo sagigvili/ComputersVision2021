@@ -23,6 +23,6 @@ for kp in kp1:
         count += 1
 
 img3 = cv2.drawKeypoints(img1, kp1, None, (0, 0, 255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
-cv2.imshow("Key Points as simon wants", img1)
-cv2.imshow("Key Points that simon doesn't approve", img3)
+cv2.imshow("Key Points 1", img1)
+cv2.imshow("Key Points 2", img3)
 cv2.waitKey(0)
