@@ -12,8 +12,7 @@ sift = cv2.SIFT_create()
 kp1, desc1 = sift.detectAndCompute(img1, None)
 kp2, desc2 = sift.detectAndCompute(img2, None)
 
-# bf = cv2.BFMatcher()
-# matches = bf.knnMatch(desc1,desc2,k=2)
+
 ''' finding the distance MXN matrix between each descriptors pair'''
 rows = len(desc1)
 cols = len(desc2)
