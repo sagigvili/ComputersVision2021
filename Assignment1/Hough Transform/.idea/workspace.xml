@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34ef4e78-0c96-49a2-91f3-44b4b83e3017" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RANSAC/Part2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hough without GUI/.idea/Hough without GUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hough without GUI/.idea/Hough without GUI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hough without GUI/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hough without GUI/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hough without GUI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hough without GUI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hough without GUI/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Hough without GUI/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RANSAC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RANSAC/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SIFT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SIFT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SIFT/exeA.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SIFT/exeA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SIFT/exeB.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SIFT/exeB.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +22,10 @@
     <session id="-1594500305">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -30,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+            <state relative-caret-position="192">
+              <caret line="58" column="41" selection-end-line="163" selection-end-column="25" />
               <folding>
                 <element signature="e#0#128#0" expanded="true" />
               </folding>
@@ -49,10 +54,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
-    <option name="width" value="1298" />
-    <option name="height" value="1049" />
+    <option name="width" value="1299" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -60,7 +65,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -72,10 +76,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -126,8 +131,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -154,8 +158,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+        <state relative-caret-position="192">
+          <caret line="58" column="41" selection-end-line="163" selection-end-column="25" />
           <folding>
             <element signature="e#0#128#0" expanded="true" />
           </folding>
