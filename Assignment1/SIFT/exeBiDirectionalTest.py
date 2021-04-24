@@ -3,9 +3,9 @@ import numpy as np
 from numpy import random
 
 
-def keyoints_matching_ratio():
-    img1 = cv2.imread("Resources/pair1_imageA.jpg")
-    img2 = cv2.imread("Resources/pair1_imageB.jpg")
+def keyoints_matching_bi(im1, im2):
+    img1 = cv2.imread(im1)
+    img2 = cv2.imread(im2)
 
     newIm = np.hstack((img1, img2))
 
@@ -14,11 +14,12 @@ def keyoints_matching_ratio():
     kp1, desc1 = sift.detectAndCompute(img1, None)
     kp2, desc2 = sift.detectAndCompute(img2, None)
 
-
     ''' finding the distance MXN matrix between each descriptors pair'''
     rows = len(desc1)
     cols = len(desc2)
     distanceOfDescriptors = np.zeros((rows, cols))
+
+
 
     for i in range(rows):
         for j in range(cols):
@@ -30,28 +31,40 @@ def keyoints_matching_ratio():
     secondBestMatch = np.inf
     matches = []
     tempIndex = None
+    tempBiDirectionalIndex = None
     indexes = []
     count = 0
+    oneDirection = []
+    oppDirection = []
     for i in range(rows):
-        bestMatch = np.inf
-        secondBestMatch = np.inf
         for j in range(cols):
             if distanceOfDescriptors[i][j] < bestMatch:
                 bestMatch = distanceOfDescriptors[i][j]
                 tempIndex = j
+        temp = (i, tempIndex)
+        oneDirection.append(temp)
+        bestMatch = np.inf
 
-        for k in range(cols):
-            if k == tempIndex:
-                continue
-            elif distanceOfDescriptors[i][k] < secondBestMatch:
-                secondBestMatch = distanceOfDescriptors[i][k]
 
-        if bestMatch < 0.8 * secondBestMatch:
-            temp2 = (kp1[i], kp2[tempIndex])
-            matches.append(temp2)
+    bestMatch = np.inf
+    for j in range(cols):
+        for i in range(rows):
+            if distanceOfDescriptors[i][j] < bestMatch:
+                bestMatch = distanceOfDescriptors[i][j]
+                tempIndex = i
+        temp = (tempIndex, j)
+        oppDirection.append(temp)
+        bestMatch = np.inf
 
-        else:
-            continue
+
+    for direct1 in oneDirection:
+        for oppDirect1 in oppDirection:
+            if (direct1[0] == oppDirect1[0]) and (direct1[1] == oppDirect1[1]):
+                temp1 = (kp1[direct1[0]], kp2[direct1[1]])
+                matches.append(temp1)
+
+
+
 
     shapeImg1 = np.shape(img1)
     newRowOffset = shapeImg1[0]
@@ -74,3 +87,4 @@ def keyoints_matching_ratio():
             cv2.circle(newIm, (x2, y2), 4, (255, 0, 0), 1)
     print("number of matches: " + str(c))
     return newIm
+
