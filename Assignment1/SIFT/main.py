@@ -61,7 +61,7 @@ class SIFT(QWidget):
         self.set_images(res)
 
     def match_points_ratio(self, img1, img2):
-        res = keyoints_matching_ratio()
+        res = keyoints_matching_ratio(img1, img2)
         self.set_images(res, img1, img2)
 
     def match_points_bi(self, img1, img2):

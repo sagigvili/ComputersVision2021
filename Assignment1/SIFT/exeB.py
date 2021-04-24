@@ -3,9 +3,9 @@ import numpy as np
 from numpy import random
 
 
-def keyoints_matching_ratio():
-    img1 = cv2.imread("Resources/pair1_imageA.jpg")
-    img2 = cv2.imread("Resources/pair1_imageB.jpg")
+def keyoints_matching_ratio(img1, img2):
+    img1 = cv2.imread(img1)
+    img2 = cv2.imread(img2)
 
     newIm = np.hstack((img1, img2))
 
