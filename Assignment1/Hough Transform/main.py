@@ -54,7 +54,10 @@ class Hough(QWidget):
         if self.image_box.pixmap():
             ## canny edge detection
             grayscale = cv2.cvtColor(self.im[1], cv2.COLOR_BGR2GRAY)
-            im = cv2.GaussianBlur(grayscale, (5, 5), cv2.BORDER_DEFAULT)
+            if self.stride == 22:
+                im = cv2.GaussianBlur(grayscale, (3, 3), cv2.BORDER_DEFAULT)
+            else:
+                im = cv2.GaussianBlur(grayscale, (5, 5), cv2.BORDER_DEFAULT)
 
             imgCanny = cv2.Canny(im, self.canny_low, self.canny_high)
 

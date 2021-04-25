@@ -41,7 +41,6 @@ def run_ransac(img1, img2):
             if distanceOfDescriptors[i][j] < bestMatch:
                 bestMatch = distanceOfDescriptors[i][j]
                 tempIndex = j
-                print(" temp index is: " + str(tempIndex))
         for k in range(cols):
             if k == tempIndex:
                 continue
