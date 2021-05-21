@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
 from pylab import *
-colors = [(255, 255, 0), (0, 255, 0), (0, 0, 255), (255, 0, 0), (255, 128, 0), (255, 0, 255), (255, 255, 255), (0, 0, 0)]
+colors = [(255, 255, 0), (0, 255, 0), (0, 0, 255), (255, 0, 0), (255, 128, 0), (255, 0, 255), (0, 0, 0)]
 img1 = cv.imread("Resources/im_family_00084_left.jpg")
 img2 = cv.imread("Resources/im_family_00100_right.jpg")
 # sift = cv.SIFT_create()
@@ -23,12 +23,16 @@ img2 = cv.imread("Resources/im_family_00100_right.jpg")
 #         pts1.append(kp1[m.queryIdx].pt)
 #
 
-pts1 = [(122.40322580645162, 51.65645161290308), (225.95161290322582, 303.26935483870955), (804.6612903225806, 282.9467741935483), (855.9516129032259, 210.36612903225796), (407.88709677419354, 155.20483870967735), (492.08064516129036, 193.9145161290321), (71.11290322580646, 112.62419354838698), (876.2741935483872, 409.7209677419354)]
-pts2 = [(575.4806148720278, 36.82515523247025), (126.71490231712855, 305.3091776465244), (768.3626381947598, 344.07943359079206), (811.0099197334545, 211.29130698167512), (285.6729516886263, 137.62782068756644), (481.4627442071785, 185.12138421929433), (705.3609722853248, 102.73459033772542), (675.3140239285173, 513.6993033469635)]
+pts1 = [(122.40322580645162, 51.65645161290308), (225.95161290322582, 303.26935483870955), (804.6612903225806, 282.9467741935483), (855.9516129032259, 210.36612903225796), (407.88709677419354, 155.20483870967735), (492.08064516129036, 193.9145161290321), (71.11290322580646, 112.62419354838698)]
+pts2 = [(575.4806148720278, 36.82515523247025), (126.71490231712855, 305.3091776465244), (768.3626381947598, 344.07943359079206), (811.0099197334545, 211.29130698167512), (285.6729516886263, 137.62782068756644), (481.4627442071785, 185.12138421929433), (705.3609722853248, 102.73459033772542)]
 pts1 = np.int32(pts1)
 pts2 = np.int32(pts2)
 
-F, mask = cv.findFundamentalMat(pts1, pts2, cv.USAC_FM_8PTS)
+F, mask = cv.findFundamentalMat(pts1, pts2, cv.FM_7POINT)
+
+# We select only inlier points
+pts1 = pts1[mask.ravel()==1]
+pts2 = pts2[mask.ravel()==1]
 
 def compute_Correspond_Epilines(points, F):
     lines = []
@@ -56,18 +60,14 @@ def drawlines(img1, img2, lines, pts1, pts2):
     return img1, img2
 
 
-# Find epilines corresponding to points in right image (second image) and
-# drawing its lines on left image
-lines1 = cv.computeCorrespondEpilines(pts2.reshape(-1,1,2), 2,F)
-lines1 = lines1.reshape(-1,3)
-img5,img6 = drawlines(img1,img2,lines1,pts1,pts2)
-# Find epilines corresponding to points in left image (first image) and
-# drawing its lines on right image
-lines2 = cv.computeCorrespondEpilines(pts1.reshape(-1,1,2), 1,F)
-lines2 = lines2.reshape(-1,3)
-img3,img4 = drawlines(img2,img1,lines2,pts2,pts1)
+lines1 = compute_Correspond_Epilines(pts1, F)
 
-cv.imshow("Sason1", img5)
-cv.imshow("Sason2", img6)
+lines2 = compute_Correspond_Epilines(pts2, F)
+
+im1, im2 = drawlines(img1, img2, lines1, pts1, pts2)
+im3, im4 = drawlines(img2, img1, lines2, pts2, pts1)
+
+cv.imshow("Sason1", im1)
+cv.imshow("Sason2", im2)
 cv.waitKey(0)
 
