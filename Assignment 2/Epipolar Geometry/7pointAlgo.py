@@ -42,16 +42,22 @@ pts1 = pts1[mask.ravel() == 1]
 pts2 = pts2[mask.ravel() == 1]
 
 
-def compute_Correspond_Epilines(points, F):
-    lines = []
-    for pt in points:
+def compute_Correspond_Epilines(points1, points2, F):
+    epi_lines1 = []
+    epi_lines2 = []
+    for i in range(len(pts1)):
         a = np.ones((3, 1))
-        a[0][0] = pt[0]
-        a[1][0] = pt[1]
-        L = np.dot(F, a)
+        a[0][0] = points1[i][0]
+        a[1][0] = points1[i][1]
+        eline2 = dot(F, a)
+        epi_lines2.append(eline2)
 
-        lines.append(L)
-    return lines
+        b = np.ones((3, 1))
+        b[0][0] = points2[i][0]
+        b[1][0] = points2[i][1]
+        eline1 = dot(np.transpose(F), b)  # or dot(x2.T, E).T
+        epi_lines1.append(eline1)
+    return epi_lines1, epi_lines2
 
 
 def drawlines(img1, img2, lines, pts1, pts2):
@@ -64,14 +70,13 @@ def drawlines(img1, img2, lines, pts1, pts2):
         x0, y0 = map(int, [0, -r[2] / r[1]])
         x1, y1 = map(int, [c, -(r[2] + r[0] * c) / r[1]])
         img1 = cv.line(img1, (x0, y0), (x1, y1), color, 2)
-        #img1 = cv.circle(img1, tuple(pt1), 5, color, -1)
+        img1 = cv.circle(img1, tuple(pt1), 5, color, -1)
         img2 = cv.circle(img2, tuple(pt2), 5, color, -1)
     return img1, img2
 
 
-lines1 = compute_Correspond_Epilines(pts1, F)
+lines1, lines2 = compute_Correspond_Epilines(pts1, pts2, F)
 
-lines2 = compute_Correspond_Epilines(pts2, F)
 
 im1, im2 = drawlines(img1, img2, lines1, pts1, pts2)
 im3, im4 = drawlines(img2, img1, lines2, pts2, pts1)
