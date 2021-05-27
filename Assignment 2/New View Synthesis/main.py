@@ -31,12 +31,22 @@ newExtrinsic = np.zeros((3,4))
 newExtrinsic[0][0] = 1
 newExtrinsic[1][1] = 1
 newExtrinsic[2][2] = 1
-# temp = np.ones((1, 4))
-# ExtrinsicAlley = np.vstack((ExtrinsicAlley, temp))
-# cam_mat = np.matmul(IntrinsicAlley, np.matmul(newExtrinsic, ExtrinsicAlley))
-# img_cords_Homogeuous = np.matmul(cam_mat, np.transpose(homogenouos3DCoords))
+temp = np.ones((1, 4))
+#ExtrinsicAlley = np.vstack((ExtrinsicAlley, temp))
+cam_mat = np.matmul(IntrinsicAlley, ExtrinsicAlley)
+img_cords_Homogeuous = np.matmul(cam_mat, np.transpose(homogenouos3DCoords))
 
 # homogBackProj = np.matmul(np.matmul(IntrinsicAlley, ExtrinsicAlley), np.transpose(homogenouos3DCoords))
+#
+
+
+#homogBackProj = np.transpose(homogBackProj)
+k = 0
+for i in range(backprojectionMatrix.shape[1]):
+    backprojectionMatrix[0][i] = int(np.round(img_cords_Homogeuous[0][i] / img_cords_Homogeuous[2][i]))
+    backprojectionMatrix[1][i] = int(np.round(img_cords_Homogeuous[1][i] / img_cords_Homogeuous[2][i]))
+    k = k+1
+#
 
 
 
@@ -52,12 +62,6 @@ for i in range(r*c):
 
 
 
-# #homogBackProj = np.transpose(homogBackProj)
-# k = 0
-# for i in range(backprojectionMatrix.shape[1]):
-#     backprojectionMatrix[0][i] = int(np.round(img_cords_Homogeuous[0][i] / img_cords_Homogeuous[2][i]))
-#     backprojectionMatrix[1][i] = int(np.round(img_cords_Homogeuous[1][i] / img_cords_Homogeuous[2][i]))
-#     k = k+1
 
 
 
