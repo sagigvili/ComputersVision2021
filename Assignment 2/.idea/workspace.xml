@@ -2,6 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4821a7d9-1346-48cd-9b87-649ead605fa6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 36.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 37.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 38.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 39.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 41.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 42.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 44.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 49.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/New View Synthesis/im  test 9.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/New View Synthesis/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/New View Synthesis/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +67,12 @@
     <session id="-1453655180">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -34,14 +88,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="92" />
-          <entry key="py" value="5226" />
+          <entry key="py" value="5590" />
           <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="5318" />
+          <entry key="Python" value="5682" />
         </counts>
       </usages-collector>
     </session>
@@ -51,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Photometric Stereo/NormalizedCrossCorrelation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="1394">
               <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -64,7 +118,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Photometric Stereo/SumSquareDifferences.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="1309">
               <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -88,8 +142,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/New View Synthesis/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+            <state relative-caret-position="208">
+              <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -129,8 +183,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="432" />
-    <option name="y" value="16" />
+    <option name="x" value="431" />
+    <option name="y" value="15" />
     <option name="width" value="1605" />
     <option name="height" value="1040" />
   </component>
@@ -140,7 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,6 +210,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,7 +348,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3240469" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3240469" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3856305" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -336,19 +390,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/New View Synthesis/main.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/New View Synthesis/main.py</url>
-          <line>67</line>
-          <option name="timeStamp" value="30" />
+          <line>91</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>prevX</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>currX</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>currY</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>depthMapAlley</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>pose[:, 0].shape</expression-string>
         <language-id>Python</language-id>
@@ -374,26 +443,6 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>backprojectionMatrix.shape[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>backprojectionMatrix.shape</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>newExtrinsic</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>np.transpose(homogenouos3DCoords)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -413,19 +462,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../Assignments/ex2 (1)/Q3/useful_python_code/sintel_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#384#402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Photometric Stereo/NormalizedCrossCorrelation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="1394">
           <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -436,7 +475,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Photometric Stereo/SumSquareDifferences.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="1309">
           <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -444,10 +483,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Assignments/ex2 (1)/Q3/useful_python_code/sintel_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#384#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/New View Synthesis/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+        <state relative-caret-position="208">
+          <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

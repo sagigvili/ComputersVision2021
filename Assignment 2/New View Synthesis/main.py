@@ -60,9 +60,9 @@ for i in range(r * c):
 
 angle = 0
 imNumber = 0
-for angle in np.arange(0, 5, 0.05):
+for angle in np.arange(0, 0.2, 0.01):
     backprojectionMatrix = np.float32(np.zeros((2, r * c)))
-    T = np.array([[0], [angle], [0]])
+    T = np.array([[0], [-angle], [0]])
     R = eulerAnglesToRotationMatrix(0, 0, 0)
     newExtrinsic = np.hstack((R, T))
     cam_mat = IntrinsicAlley @ newExtrinsic
@@ -73,15 +73,33 @@ for angle in np.arange(0, 5, 0.05):
         backprojectionMatrix[1][i] = int(np.round(img_cords_Homogenuous[1][i] / img_cords_Homogenuous[2][i]))
 
     newIm = np.zeros(np.shape(img1))
+    boolDoubleMap = np.zeros((r, c))
+    DoubleMapCoord = np.zeros((r*c, 2))
     backprojectionMatrix = np.transpose(backprojectionMatrix)
     k = 0
     for i in range(r):
         for j in range(c):
             m, n = backprojectionMatrix[k]
+            m = int(m)
+            n = int(n)
             if n >= c or m >= r or n < 0 or m < 0:
                 pass
+            elif boolDoubleMap[m][n] == 1:
+                currX = int(D2_points[k][0])
+                currY = int(D2_points[k][1])
+                prevX = int(DoubleMapCoord[m*n + n][0])
+                prevY = int(DoubleMapCoord[m * n + n][1])
+                if depthMapAlley[currX][currY] < depthMapAlley[prevX][prevY]:
+                    newIm[i][j] = img1[m][n]
+                    DoubleMapCoord[m * n + n][0] = currX
+                    DoubleMapCoord[m * n + n][1] = currY
             else:
-                newIm[i][j] = img1[int(m)][int(n)]
+                newIm[i][j] = img1[m][n]
+                prevX = int(D2_points[k][0])
+                prevY = int(D2_points[k][1])
+                boolDoubleMap[m][n] = 1
+                DoubleMapCoord[m*n + n][0] = prevX
+                DoubleMapCoord[m * n + n][1] = prevY
             k = k + 1
 
     # cv_io.imshow(depthMapAlley)
