@@ -1,0 +1,19 @@
+Window Size: 3
+the mean of absolute differences is: 7.928805526737715
+the median of absolute differences is: 0.6666666666666643
+the bad0.5 is: 51.66698104310101
+the bad4 is: 35.13628218428747
+******************************************************
+Window Size: 9
+the mean of absolute differences is: 4.980424179871693
+the median of absolute differences is: 0.3333333333333357
+the bad0.5 is: 40.53427235747677
+the bad4 is: 21.220933762370226
+******************************************************
+ 
+Window Size: 15
+the mean of absolute differences is: 4.793477807529008
+the median of absolute differences is: 0.3333333333333357
+the bad0.5 is: 43.90593328495283
+the bad4 is: 22.582643077000075
+******************************************************
