@@ -9,13 +9,7 @@ img1 = cv.imread("Resources/im_courtroom_00086_left.jpg")
 img2 = cv.imread("Resources/im_courtroom_00089_right.jpg")
 # img1 = cv.imread("Resources/im_family_00084_left.jpg")
 # img2 = cv.imread("Resources/im_family_00100_right.jpg")
-# fig = plt.figure(dpi=200)
-# axes = fig.add_subplot(111)
-#
-# print("After 2 clicks :")
-# axes.imshow(img2)
-# x = fig.ginput(11, timeout=0)
-# print(x)
+
 
 # Court Points
 pts1 = [(208.53225806451613, 27.758064516129025), (395.3064516129032, 231.9516129032258), (506.5967741935484, 155.5),
@@ -116,7 +110,7 @@ print("The Epipolar distance is {}".format(np.average(results_epi)))
 im1, im2 = drawlines(img1, img2, lines1, pts1, pts2)
 im3, im4 = drawlines(img2, img1, lines2, pts2, pts1)
 
-#cv.imwrite("epipolar_im_family_8Point.jpg", np.hstack((im1, im2)))
+cv.imwrite("epipolar_im_court_8Point.jpg", np.hstack((im1, im2)))
 cv.imshow("Image 1", im1)
 cv.imshow("Image 2", im2)
 cv.waitKey(0)
